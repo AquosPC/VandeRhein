@@ -10,8 +10,12 @@ ul {
     background-color: #333;
   }
   
-  li {
+  .float-left {
     float: left;
+  }
+
+  .float-right {
+    float: right;
   }
   
   li a {
@@ -34,4 +38,19 @@ ul {
 }
 .divtext {
   display: flex;
+}
+.center {
+  margin: auto;
+  text-align: center;
+}
+.login-form {
+  margin-top: 1cm;
+  border: 5px solid #4CAF50;
+  border-radius: 4px;
+  background-color: #4CAF50;
+  text-align: center;
+  color: white;
+}
+input::placeholder{
+  color: white;
 }

@@ -10,6 +10,7 @@
   </h3></div>
 </div>
 <ul>
-  <li><a <?php if ($ID == 0) { print('class="active" ');  }?> href="Index">Home</a></li>
-  <li><a <?php if ($ID == 1) { print('class="active" ');  }?> href="Database">Database</a></li>
+  <li><a <?php if ($ID == 0) { print('class="active float-left" '); }  else { print('class="float-left" '); } ?> href="Index">Home</a></li>
+  <li><a <?php if ($ID == 1) { print('class="active float-left" ');  } else { print('class="float-left" '); } ?> href="Database">Database</a></li>
+  <li><a <?php if ($ID == 2) { print('class="active float-right" ');  } else { print('class="float-right" '); } ?> href="Login">Login</a></li>
 </ul>
