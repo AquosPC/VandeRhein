@@ -1,8 +1,23 @@
 body {
     padding: 0%;
     margin: 0%;
+    font-family: 'Open Sans', sans-serif;
 }
-ul {
+.ul-title {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+.title-text {
+  font-size: 45px;
+  font-family: 'Open Sans';
+}
+.page-text {
+  font-size: 25px;
+  font-family: 'Open Sans';
+}
+.ul-nav {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -34,6 +49,7 @@ ul {
     background-color: #4CAF50;
   }
 .pagetext {
+  text-align: right;
   float: right;
 }
 .divtext {
