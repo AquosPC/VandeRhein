@@ -11,6 +11,6 @@
     <?php
     $ID = 0;
     require 'Include\PHP\navbar.php';
-    ?>
+?>
 </body>
 </html>

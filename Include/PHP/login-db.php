@@ -30,8 +30,9 @@ if (isset($_POST['signin-submit'])) {
                     session_start();
                     $_SESSION['id'] = $row['id'];
                     $_SESSION['username'] = $row['username'];
+                    $_SESSION['accountrank'] = $row['accountrank'];
 
-                    header("Location: ../../Login?login=success");
+                    header("Location: ../../Index?login=success");
                     exit();
                 }
             }
