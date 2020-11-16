@@ -1,3 +1,7 @@
+<?php
+  session_start();
+?>
+
 <head>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@700&display=swap" rel="stylesheet">
 </head>
@@ -17,6 +21,12 @@
 <ul class="ul-nav">
   <li><a <?php if ($ID == 0) { print('class="active float-left" '); }  else { print('class="float-left" '); } ?> href="Index">Home</a></li>
   <li><a <?php if ($ID == 1) { print('class="active float-left" ');  } else { print('class="float-left" '); } ?> href="Database">Database</a></li>
-  <li><a <?php if ($ID == 2) { print('class="active float-right" ');  } else { print('class="float-right" '); } ?> href="Login">Log in</a></li>
-  <li><a <?php if ($ID == 2) { print('class="active float-right" ');  } else { print('class="float-right" '); } ?> href="includes\logout">Log uit</a></li>
+  <?php
+  if (isset($_SESSION['id'])) {
+    echo '<li><a class="float-right" href="Include\PHP\logout-db.php">Log uit</a></li>';
+  }
+  else {
+    echo '<li><a class="float-right" href="Login">Log in</a></li>';
+  }
+  ?>
 </ul>
