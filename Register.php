@@ -8,10 +8,10 @@
 </head>
 <body>
     <?php
-    $ID = 2;
+    $ID = 3;
     require 'Include\PHP\navbar.php';
     
-    require 'Include\PHP\login-window.php';
+    require 'Include\PHP\register-window.php';
     ?>
 
 </body>

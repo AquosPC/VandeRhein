@@ -7,10 +7,7 @@ $DBname = "vanderhein";
 $conn = new mysqli($servername, $username, $password, $DBname);
 
 if (!$conn) {
-    die("error:" . $mysqli_Connect_Error);
-}
-else {
-    echo("verbonden!");
+    die("error:" . $mysqli_connect_error());
 }
 
 ?>

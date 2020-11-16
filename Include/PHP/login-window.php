@@ -1,9 +1,10 @@
 <div class="center">
-    <form action="login-db.php" method="post">
-        <input type="text" name="username" id="username" placeholder="Login-naam">
-        <br>
-        <input type="text" name="Password" id="Password" placeholder="Wachtwoord">
-        <br>
-        <input type="submit" value="Log in">
-    </form>
-</div>
+        <div class="center">
+        <form action="login-db.php" method="post">
+            <input class="login-form" type="text" name="username" placeholder="Login-naam">
+            <br>
+            <input class="login-form" type="password" name="Password" placeholder="Wachtwoord">
+            <br>
+            <button class="login-form" type="submit" name="signup-submit" >log in</button>
+        </div>  
+    </div>
