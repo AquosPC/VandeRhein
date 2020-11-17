@@ -12,7 +12,7 @@
       print('Main Page');
     }
     elseif ($ID == 1) {
-      print('Database Page');
+      print('Gebruiker Page');
     } 
     elseif ($ID == 2) {
       print('Login Page');
@@ -20,9 +20,12 @@
 </ul>
 <ul class="ul-nav">
   <li><a <?php if ($ID == 0) { print('class="active float-left" '); }  else { print('class="float-left" '); } ?> href="Index">Home</a></li>
-  <li><a <?php if ($ID == 1) { print('class="active float-left" ');  } else { print('class="float-left" '); } ?> href="Database">Database</a></li>
   <?php
+
   if (isset($_SESSION['id'])) {
+    echo '<li><a class="float-left" href="Users">Gebruikers</a></li>';
+    echo '<li><a class="float-left" href="Register">Gebruiker toevoegen</a></li>';
+
     echo '<li><a class="float-right" href="Include\PHP\logout-db.php">Log uit</a></li>';
   }
   else {

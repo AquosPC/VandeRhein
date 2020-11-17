@@ -20,6 +20,17 @@ body {
   font-family: 'Open Sans';
   color: white;
 }
+.white-text {
+  color: white;
+  font-family: 'Open Sans';
+  font-size: 15px;
+}
+.div-page {
+  padding: 50px;
+}
+.table-divider {
+  padding-left: 50px;
+}
 .ul-nav {
     list-style-type: none;
     margin: 0;
@@ -37,6 +48,13 @@ body {
   }
   
   li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  li p {
     display: block;
     color: white;
     text-align: center;

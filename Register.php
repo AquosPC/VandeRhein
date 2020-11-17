@@ -8,10 +8,17 @@
 </head>
 <body>
     <?php
-    $ID = 3;
+    $ID = 1;
     require 'Include\PHP\navbar.php';
-    
-    require 'Include\PHP\register-window.php';
+    require 'Include\PHP\conn.php';
+    if (isset($_SESSION['id'])) {
+
+
+        require 'Include\PHP\register-window.php';
+    }
+    else {
+        echo '<br><h2 class="page-text center">U moet eerst inloggen</h2>';
+    }
     ?>
 
 </body>
