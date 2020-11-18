@@ -19,7 +19,7 @@ if (isset($_POST['update-submit'])) {
             header("Location: ../../register?error=sql1error");
             exit();
         }
-            if ($password !== empty($password)) {
+            if ($password !== NULL) {
                 $sql = "UPDATE `users` SET `email` = '?',`password` = '?',`username` = '?' WHERE `users`.`id` =".$_POST['id'];
                 $stmt = mysqli_stmt_init($conn);
 
@@ -33,7 +33,7 @@ if (isset($_POST['update-submit'])) {
 
             }
             else {
-                $sql = "UPDATE INTO users (email, password, username) VALUES (?, ?)";
+                $sql = "UPDATE INTO users (email, username) VALUES (?, ?)";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("Location: ../../register?error=sql3error");
