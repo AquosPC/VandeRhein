@@ -22,7 +22,7 @@
         while ($row = mysqli_fetch_assoc($result)) { ?>
             <div class="center">
             <div class="center">
-            <form action="Include/PHP/update-users-db.php" method="post">
+            <form action="Include/PHP/update-users-db.php?id=<?php echo $id ?>" method="post">
                 <input class="login-form" type="text" name="username" placeholder="Login-naam" value="<?php echo $row['username'] ?>" >
                 <br>
                 <input class="login-form" type="text" name="mail" placeholder="email" value="<?php echo $row['email'] ?>" >

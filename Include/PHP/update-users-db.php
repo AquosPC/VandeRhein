@@ -2,7 +2,7 @@
 if (isset($_POST['update-submit'])) {
     
     require 'conn.php';
-
+    $id = mysqli_escape_string($conn, $_GET['id']);
     $username = $_POST['username'];
     $email = $_POST['mail'];
     $password = $_POST['pwd'];
@@ -19,30 +19,32 @@ if (isset($_POST['update-submit'])) {
             header("Location: ../../register?error=sql1error");
             exit();
         }
-            if ($password !== NULL) {
-                $sql = "UPDATE `users` SET `email` = '?',`password` = '?',`username` = '?' WHERE `users`.`id` =".$_POST['id'];
+            if ($password != NULL) {
+                $sql = "DELETE FROM `users` WHERE `users`.`id` = $id";
+                //$sql = "UPDATE users SET (email, username, password) VALUES ('$email', '$username', '$hashedpwd') WHERE `users`.`id` = $id";
+                //$sql = " users (email, password, username) VALUES (?, ?, ?)";
                 $stmt = mysqli_stmt_init($conn);
-
-
-                $hashedpwd = password_hash($password, PASSWORD_DEFAULT);
-
-                mysqli_stmt_bind_param($stmt, "sss", $email, $hashedpwd, $username);
+                //mysqli_stmt_bind_param('s', $hashedpwd);
+                //mysqli_stmt_bind_param($stmt, ":password", $hashedpwd);
+                //mysqli_stmt_execute($stmt);
                 mysqli_stmt_execute($stmt);
-                header("Location: ../../register?updatewithpassword=success");
-                exit();
+                    header("Location: ../../Index?updatewithpassword=success");
+                    exit();
 
             }
             else {
-                $sql = "UPDATE INTO users (email, username) VALUES (?, ?)";
+                /* $sql = "UPDATE users SET email=?, username=? WHERE id = ?"; */
+                $sql = "UPDATE `users` SET `email` = '$email', `username` = '$username' WHERE `users`.`id` = $id";
                 $stmt = mysqli_stmt_init($conn);
                 if (!mysqli_stmt_prepare($stmt, $sql)) {
                     header("Location: ../../register?error=sql3error");
+                    echo $sql;
                     exit();
                 }
                     else {
-    
-                        mysqli_stmt_bind_param($stmt, "ss", $email, $username);
                         mysqli_stmt_execute($stmt);
+                        echo $sql;
+                        die();
                         header("Location: ../../register?updatewithoutpassword=success");
                         exit();
                     } 
