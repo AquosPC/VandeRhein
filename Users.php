@@ -30,6 +30,7 @@
                         <td>Inlognaam</td>
                         <td>E-Mail</td>
                         <td class="table-divider">aanpassen</td>
+                        <td class="table-divider">Verwijderen</td>
                     </tr>
             <?php
 
@@ -40,7 +41,8 @@
                         <td><?php echo $row['id'] ?></td>
                         <td><?php echo $row['username'] ?></td>
                         <td><?php echo $row['email'] ?></td>
-                        <td><a href="Userview.php?id=<?php echo $row['id'] ?>"><button>X</button></a></td>
+                        <td><a href="Userview.php?id=<?php echo $row['id'] ?>"><button class="button-center">X</button></a></td>
+                        <td><a href="Userview.php?id=<?php echo $row['id'] ?>"><button class="button-center">X</button></a></td>
                     </tr>
             
                 <?php }
