@@ -9,7 +9,7 @@
 </head>
 <body>
     <?php
-    $ID = 0;
+    $ID = 3;
     require 'Include\PHP\navbar.php';
     require 'Include\PHP\conn.php';
 
@@ -25,8 +25,11 @@
     if (isset($_SESSION['id'])) {
         $username = $_SESSION['username'];
 
-        echo '<br><h2 class="page-text center">Welkom, ' . $username . '</h2>';
-    }
+        echo '<br><h2 class="page-text center">Welkom, ' . $username . '</h2>'; ?>
+        <div class="center">
+            <a href="hijskranentest-aanmaken"><button class="center login-form">Toevoegen</button></a>
+        </div>
+    <?php }
     else {
         echo '<br><h2 class="page-text center">U moet eerst inloggen.</h2>';
     }
