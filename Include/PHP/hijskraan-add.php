@@ -5,7 +5,8 @@ if (isset($_POST['hijskraanadd-submit'])) {
 
     $opdrachtnummer = $_POST['opdrachtnummer'];
     $volgnummer = $_POST['volgnummer'];
-    $datum = $_POST['datetime'];
+    $datum = strtotime($_POST['datetime']);
+    $datum = date('YmdHis', $datum);
     $hoofdgieklengte = $_POST['hoofdgieklengte'];
     $mechsectiegieklengte = $_POST['mechsectiegieklengte'];
     $hulpgieklengte = $_POST['hulpgieklengte'];
@@ -17,15 +18,30 @@ if (isset($_POST['hijskraanadd-submit'])) {
     $toelaatbarebedrijflast = $_POST['toelaatbarebedrijflast'];
     $lmbinwerking = $_POST['lmbinwerking'];
     $proeflast = $_POST['proeflast'];
-    $akkoord = $_POST['akkoord'];
+
+    if ($_POST['akkoord'] = on) {
+        $akkoord = True;
+    }
+    else {
+        $akkoord = False;
+    }
 
     $sql = "INSERT INTO hijstesten (Opdrachtnummer, Volgnummer, Datum_Opgesteld, Hoofdgiek_Lengte, Mech_Sectie_Gieklengte, Hulpgiek_Lengte, Hoofdgiek_Giekhoek, Hulpgiek_Giekhoek, Hijskabel_Aantal_Parten, Zwenkhoek, Eigen_Massa_Ballast, Toelaatbare_Bedrijflast, LMB_In_Werking, Proeflast, Akkoord)
      VALUES ($opdrachtnummer, $volgnummer, $datum, $hoofdgieklengte, $mechsectiegieklengte, $hulpgieklengte, $hoofdgiekgiekhoek, $hulpgiekgiekhoek, $hijskabelaantalparten, $zwenkhoek, $eigenmassaballast, $toelaatbarebedrijflast, $lmbinwerking, $proeflast, $akkoord)";
 
+   if (mysqli_query($conn, $sql)) {
+        header("Location: ../../Voorbladen?Success");
+        exit();
+    }
+    else {
+        header("Location: ../../Voorbladen?error2");
+    exit();
+    }
     
 }
 else {
-    header("Location: /hijskranentest?error");
+    header("Location: ../../Voorbladen?error");
+    exit();
 }
 
 ?>

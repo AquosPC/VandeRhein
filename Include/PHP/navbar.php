@@ -18,7 +18,7 @@
       print('Login Page');
     }
     elseif ($ID == 3) {
-      print('Hijskranentest');
+      print('Voorbladen');
     } ?></li>
 </ul>
 <ul class="ul-nav">
@@ -28,7 +28,7 @@
   if (isset($_SESSION['id'])) {
     echo '<li><a class="float-left" href="Users">Gebruikers</a></li>';
     echo '<li><a class="float-left" href="Register">Gebruiker toevoegen</a></li>';
-    echo '<li><a class="float-left" href="hijskranentest">hijskranentest</a></li>';
+    echo '<li><a class="float-left" href="Voorbladen">Voorbladen</a></li>';
     echo '<li><a class="float-left" href="countdown">Wanneer mag ik naar huis?</a></li>';
 
     echo '<li><a class="float-right" href="Include\PHP\logout-db.php">Log uit</a></li>';

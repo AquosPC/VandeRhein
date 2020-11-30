@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Include\CSS\Main.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <title>Over de Rhein - Home</title>
+    <title>Over de Rhein - Voorbladen</title>
 </head>
 <body>
     <?php
@@ -27,7 +27,7 @@
 
         echo '<br><h2 class="page-text center">Welkom, ' . $username . '</h2>'; ?>
         <div class="center">
-            <a href="hijskranentest-aanmaken"><button class="center login-form">Toevoegen</button></a>
+            <a href="voorbladhijskranentest-aanmaken"><button class="center login-form">Toevoegen</button></a>
         </div>
     <?php }
     else {
