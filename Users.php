@@ -14,10 +14,11 @@
     require 'Include\PHP\conn.php';
 
    
-    if (isset($_SESSION['id'])) {
-        $username = $_SESSION['username'];
+    if (isset($_SESSION['id'])) { ?>
 
-        echo '<br><h2 class="page-text center">Wat wilt u aanpassen ' . $username . '?</h2>';
+        <div class="center">
+        <a href="Register"><button class="center login-form">Gebruiker toevoegen</button></a>
+        </div> <?php
 
         $sql = "SELECT * FROM users;";
         $result = mysqli_query($conn, $sql);
@@ -29,7 +30,7 @@
                         <td>ID</td>
                         <td>Inlognaam</td>
                         <td>E-Mail</td>
-                        <td class="table-divider">aanpassen</td>
+                        <td class="table-divider">Admin</td>
                         <td class="table-divider">Verwijderen</td>
                     </tr>
             <?php
@@ -41,8 +42,12 @@
                         <td><?php echo $row['id'] ?></td>
                         <td><?php echo $row['username'] ?></td>
                         <td><?php echo $row['email'] ?></td>
-                        <td><a href="Userview.php?id=<?php echo $row['id'] ?>"><button class="button-center">X</button></a></td>
-                        <td><a href="Userview.php?id=<?php echo $row['id'] ?>"><button class="button-center">X</button></a></td>
+                        <td><?php if ($row['accountrank'] = 1) {
+                            echo('Ja');
+                        } else {
+                            echo('Nee');
+                        }?></td>
+                        <td><a href="Delete-user.php?id=<?php echo $row['id'] ?>"><button class="button-center">X</button></a></td>
                     </tr>
             
                 <?php }

@@ -22,17 +22,10 @@
         while ($row = mysqli_fetch_assoc($result)) { ?>
             <div class="center">
             <div class="center">
-            <form action="Include/PHP/update-users-db.php?id=<?php echo $id ?>" method="post">
-                <input class="login-form" type="text" name="username" placeholder="Login-naam" value="<?php echo $row['username'] ?>" >
-                <br>
-                <input class="login-form" type="text" name="mail" placeholder="email" value="<?php echo $row['email'] ?>" >
-                <br>
-                <input class="login-form" type="password" name="pwd" placeholder="Wachtwoord">
-                <br>
-                <input class="login-form" type="password" name="pwdrepeat" placeholder="Bevestig Wachtwoord">
-                <br>
-                <input type="checkbox" name="Admin">
-                <button class="login-form" type="submit" name="update-submit" >Aanpassen</button>
+            <a href="Users"><button class="login-form" >Terug</button></a>
+            <form action="Include/PHP/delete-users-db.php?id=<?php echo $id ?>" method="post">
+                <p class="page-text">Weet u het zeker?</p>
+                <button class="delete-button" type="submit" name="delete-submit" >Verwijderen</button>
             </div>  
     </div>
     

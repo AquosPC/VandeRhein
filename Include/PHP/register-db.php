@@ -7,6 +7,12 @@ if (isset($_POST['signup-submit'])) {
     $email = $_POST['mail'];
     $password = $_POST['pwd'];
     $passwordRepeat = $_POST['pwdrepeat'];
+    if ($_POST['admin'] = on) {
+        $admin = 1;
+    }
+    else {
+        $admin = 0;
+    }
 
     if ($password !== $passwordRepeat) {
         header("Location: ../../register?error=wachtwoordfout");
@@ -29,7 +35,7 @@ if (isset($_POST['signup-submit'])) {
                 exit();
             }
             else {
-            $sql = "INSERT INTO users (email, password, username) VALUES (?, ?, ?)";
+            $sql = "INSERT INTO users (email, password, username, accountrank) VALUES (?, ?, ?, ?)";
             $stmt = mysqli_stmt_init($conn);
             if (!mysqli_stmt_prepare($stmt, $sql)) {
                 header("Location: ../../register?error=sql2error");
@@ -38,7 +44,7 @@ if (isset($_POST['signup-submit'])) {
             else {
                 $hashedpwd = password_hash($password, PASSWORD_BCRYPT);
 
-                mysqli_stmt_bind_param($stmt, "sss", $email, $hashedpwd, $username);
+                mysqli_stmt_bind_param($stmt, "sssi", $email, $hashedpwd, $username, $admin);
                 mysqli_stmt_execute($stmt);
                 header("Location: ../../register?signup=success");
                 exit();

@@ -9,6 +9,8 @@
             <br>
             <input class="login-form" type="password" name="pwdrepeat" placeholder="Bevestig Wachtwoord" required>
             <br>
+            <p class="page-text">admin: </p> <input type="checkbox" name="admin">
+            <br>
             <button class="login-form" type="submit" name="signup-submit" >Registreren</button>
         </div>  
     </div>

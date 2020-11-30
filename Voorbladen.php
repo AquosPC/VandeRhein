@@ -22,12 +22,10 @@
             echo $row['username'];
         }
     } */
-    if (isset($_SESSION['id'])) {
-        $username = $_SESSION['username'];
-
-        echo '<br><h2 class="page-text center">Welkom, ' . $username . '</h2>'; ?>
+    if (isset($_SESSION['id'])) { ?>
         <div class="center">
-            <a href="voorbladhijskranentest-aanmaken"><button class="center login-form">Toevoegen</button></a>
+            <a href="voorbladhijskranentest-aanmaken"><button class="center login-form">Hijskraantest Toevoegen</button></a>
+            <a href="voorbladkabelchecklist-aanmaken"><button class="center login-form">Kabelchecklist Toevoegen</button></a>
         </div>
     <?php }
     else {

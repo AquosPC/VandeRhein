@@ -27,7 +27,6 @@
 
   if (isset($_SESSION['id'])) {
     echo '<li><a class="float-left" href="Users">Gebruikers</a></li>';
-    echo '<li><a class="float-left" href="Register">Gebruiker toevoegen</a></li>';
     echo '<li><a class="float-left" href="Voorbladen">Voorbladen</a></li>';
     echo '<li><a class="float-left" href="countdown">Wanneer mag ik naar huis?</a></li>';
 
