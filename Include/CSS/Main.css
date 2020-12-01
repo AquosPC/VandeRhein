@@ -20,6 +20,15 @@ body {
   font-family: 'Open Sans';
   color: white;
 }
+.voorblad-text {
+  font-size: 25px;
+  font-family: 'Open Sans';
+  color: white;
+  text-align: left;
+}
+.text-left {
+  text-align: left;
+}
 .white-text {
   color: white;
   font-family: 'Open Sans';
