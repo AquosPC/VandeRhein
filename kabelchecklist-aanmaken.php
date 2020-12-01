@@ -25,39 +25,28 @@
     if (isset($_SESSION['id'])) {
         //$opdrachtnummer = mysqli_escape_string($conn, $_GET['opdrachtnummer']); ?>
         <div class="center">
-            <form action="Include\PHP\hijskraan-add.php" method="post">
+            <form action="Include\PHP\kabelchecklist-add.php" method="post">
                 <input class="login-form" type="number" name="opdrachtnummer" placeholder="Opdrachtnummer" value="<?php $opdrachtnummer ?>">
                 <br>
-                <input class="login-form" type="number" name="volgnummer" placeholder="Volgnummer">
+                <input class="login-form" type="number" name="kabelid" placeholder="KabelID">
                 <br>
+                <input class="login-form" type="number" name="draadbreuk6d" placeholder="Draadbreuk 6D">
                 <br>
-                <input type="datetime-local" name="datetime">
+                <input class="login-form" type="number" name="draadbreuk30d" placeholder="Draadbreuk 30D">
                 <br>
-                <input class="login-form" type="number" name="hoofdgieklengte" placeholder="Hoofdgiek lengte">
+                <input class="login-form" type="number" name="beschadigingbuitenzijde" placeholder="Beschadiging Buitenzijde">
                 <br>
-                <input class="login-form" type="number" name="mechsectiegieklengte" placeholder="Mech sectie gieklengte">
+                <input class="login-form" type="number" name="beschadigingroestcorrosie" placeholder="Beschadiging Roest Corrosie">
                 <br>
-                <input class="login-form" type="number" name="hulpgieklengte" placeholder="Hulpgiek lengte">
+                <input class="login-form" type="number" name="verminderdekabeldiameter" placeholder="Verminderde Kabeldiameter">
                 <br>
-                <input class="login-form" type="number" name="hoofdgiekgiekhoek" placeholder="Hoofdgiek giekhoek">
+                <input class="login-form" type="number" name="positiemeetpunten" placeholder="Positie Meetpunten">
                 <br>
-                <input class="login-form" type="number" name="hulpgiekgiekhoek" placeholder="Hulpgiek giekhoek">
+                <input class="login-form" type="number" name="beschadigingtotaal" placeholder="Beschadiging Totaal">
                 <br>
-                <input class="login-form" type="number" name="hijskabelaantalparten" placeholder="Hijskabel aantal parten">
+                <input class="login-form" type="number" name="typebeschadigingroest" placeholder="Type Beschadiging Roest">
                 <br>
-                <input class="login-form" type="number" name="zwenkhoek" placeholder="Zwenkhoek">
-                <br>
-                <input class="login-form" type="number" name="eigenmassaballast" placeholder="Eigen massa ballast">
-                <br>
-                <input class="login-form" type="number" name="toelaatbarebedrijflast" placeholder="Toelaatbare bedrijflast">
-                <br>
-                <input class="login-form" type="number" name="lmbinwerking" placeholder="LMB in werking">
-                <br>
-                <input class="login-form" type="number" name="proeflast" placeholder="Proeflast">
-                <br>
-                <p class="page-text">Akkoord: </p> <input type="checkbox" name="akkoord">
-                <br>
-                <button class="login-form" type="submit" name="hijskraanadd-submit">Toevoegen</button>
+                <button class="login-form" type="submit" name="kabelchecklistadd-submit">Toevoegen</button>
             </form>
         </div>
 

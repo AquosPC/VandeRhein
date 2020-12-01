@@ -52,8 +52,8 @@
                             <td><?php echo $row['Opdrachtnummer'] ?></td>
                             <td><?php echo $row['TCTV_nummer'] ?></td>
                             <td><?php echo $row['Keuringdatum'] ?></td>
-                            <td><a href="View-voorblad.php?opdrachtnummer=<?php echo $row['Opdrachtnummer'] ?>"><button class="button-center">X</button></a></td>
-                            <td><a href="Delete-voorblad.php?opdrachtnummer=<?php echo $row['Opdrachtnummer'] ?>"><button class="button-center">X</button></a></td>
+                            <td><a href="View-voorblad.php?id=<?php echo $row['Opdrachtnummer'] ?>"><button class="button-center">X</button></a></td>
+                            <td><a href="Delete-voorblad.php?id=<?php echo $row['Opdrachtnummer'] ?>"><button class="button-center">X</button></a></td>
                         </tr>
                 
                     <?php }

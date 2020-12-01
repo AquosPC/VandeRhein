@@ -25,7 +25,7 @@
     if (isset($_SESSION['id'])) {
         $username = $_SESSION['username']; ?>
         <div class="center">
-            <form action="Include\PHP\voorblad-add.php" method="post">
+            <form action="Include\PHP\voorbladhijskranentest-add.php" method="post">
                 <input class="login-form" type="number" name="opdrachtnummer" placeholder="Opdrachtnummer">
                 <br>
                 <input class="login-form" type="number" name="tctvnummer" placeholder="TCTV Nummer">
