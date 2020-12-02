@@ -24,11 +24,11 @@
     } */
     if (isset($_SESSION['id'])) { ?>
         
-        </div> <?php
+        <?php
             $opdrachtnummer = $_GET['opdrachtnummer'];
 
             $sql = "SELECT * FROM voorbladen 
-            INNER JOIN hijstesten ON voorbladen.Opdrachtnummer = hijstesten.Opdrachtnummer";
+            INNER JOIN hijstesten ON voorbladen.Opdrachtnummer = hijstesten.Opdrachtnummer WHERE voorbladen.Opdrachtnummer = $opdrachtnummer";
 
             $result = mysqli_query($conn, $sql);
             $resultcheck = mysqli_num_rows($result); ?>
@@ -52,11 +52,23 @@
                         <p class="voorblad-text">Hulpgiek Meters: <?php echo $row['Hulpgiek_Meters']?></p>
                         <p class="voorblad-text">Fly jib Delen: <?php echo $row['Fly_jib_Delen']?></p>
                         <p class="voorblad-text">Gieklengte: <?php echo $row['Gieklengte']?></p>
-                        <p class="voorblad-text">Topbaar: <?php echo $row['Topbaar']?></p>
-                        <p class="voorblad-text">Loopkat: <?php echo $row['Loopkat']?></p>
+                        <?php if ($row['Topbaar'] == 1) {
+                           echo'<p class="voorblad-text">Topbaar: Ja</p>';
+                        } else {
+                            echo'<p class="voorblad-text">Topbaar: Nee</p>';
+                        } ?>
+                        <?php if ($row['Loopkat'] == 1) {
+                           echo'<p class="voorblad-text">Loopkat: Ja</p>';
+                        } else {
+                            echo'<p class="voorblad-text">Loopkat: Nee</p>';
+                        } ?>
                         <p class="voorblad-text">Verstelbare Giek: <?php echo $row['Verstelbare_giek']?></p>
                         <p class="voorblad-text">Soort Stempels: <?php echo $row['Soort_Stempels']?></p>
-                        <p class="voorblad-text">Tekortkomingen: <?php echo $row['Tekortkomingen']?></p>
+                        <?php if ($row['Tekortkomingen'] == 1) {
+                           echo'<p class="voorblad-text">Tekortkomingen: Ja</p>';
+                        } else {
+                            echo'<p class="voorblad-text">Tekortkomingen: Nee</p>';
+                        } ?>
                         <p class="voorblad-text">Afmelden voor: <?php echo $row['Afmelden_Voor']?></p>
                         <p class="voorblad-text">Toelichting: <?php echo $row['Toelichting']?></p>
                         <p class="voorblad-text">Werkinstructie: <?php echo $row['Werkinstructie']?></p>
@@ -81,15 +93,84 @@
                         <p class="voorblad-text">Toelaatbare Bedrijflast: <?php echo $row['Toelaatbare_Bedrijflast']?></p>
                         <p class="voorblad-text">LMB in Werking: <?php echo $row['LMB_In_Werking']?></p>
                         <p class="voorblad-text">Proeflast: <?php echo $row['Proeflast']?></p>
-                        <?php if ($row['Akkoord'] = 1) {
+                        <?php if ($row['Akkoord'] == 1) {
                            echo'<p class="voorblad-text">Akkoord: Ja</p>';
                         } else {
                             echo'<p class="voorblad-text">Akkoord: Nee</p>';
                         } ?>
                         
                     <?php }
+            } else {?>
+                <div class="center div-page">
+
+                <?php
+                $sql2 = "SELECT * FROM voorbladen 
+                INNER JOIN kabelchecklisten ON voorbladen.Opdrachtnummer = kabelchecklisten.Opdrachtnummer WHERE voorbladen.Opdrachtnummer = $opdrachtnummer";
+
+                $result2 = mysqli_query($conn, $sql2);
+                $resultcheck2 = mysqli_num_rows($result2);
+
+                if ($resultcheck2 > 0) {
+                    while ($row2 = mysqli_fetch_assoc($result2)) { ?>
+                        <hr>
+                        <h1 class="title-text text-left">Voorblad</h1>
+                        <hr>
+                        <p class="voorblad-text">Opdrachtnummer: <?php echo $row2['Opdrachtnummer']?></p>
+                        <p class="voorblad-text">TCTV nummer: <?php echo $row2['TCTV_nummer']?></p>
+                        <p class="voorblad-text">Keuringdatum: <?php echo $row2['Keuringdatum']?></p>
+                        <p class="voorblad-text">Uitvoerder: <?php echo $row2['Uitvoerder']?></p>
+                        <p class="voorblad-text">Deskundige: <?php echo $row2['Deskundige']?></p>
+                        <p class="voorblad-text">Opstelling kraan: <?php echo $row2['Opstelling_Kraan']?></p>
+                        <p class="voorblad-text">Uitvoering Toren Haakhoogte: <?php echo $row2['Uitvoering_Toren_Haakhoogte']?></p>
+                        <p class="voorblad-text">Soort Giek: <?php echo $row2['Soort_Giek']?></p>
+                        <p class="voorblad-text">Telescoopgiek Delen: <?php echo $row2['Telescoopgiek_Delen']?></p>
+                        <p class="voorblad-text">Opbouwgiek Meters: <?php echo $row2['Opbouwgiek_Meters']?></p>
+                        <p class="voorblad-text">Hulpgiek Meters: <?php echo $row2['Hulpgiek_Meters']?></p>
+                        <p class="voorblad-text">Fly jib Delen: <?php echo $row2['Fly_jib_Delen']?></p>
+                        <p class="voorblad-text">Gieklengte: <?php echo $row2['Gieklengte']?></p>
+                        <?php if ($row2['Topbaar'] == 1) {
+                           echo'<p class="voorblad-text">Topbaar: Ja</p>';
+                        } else {
+                            echo'<p class="voorblad-text">Topbaar: Nee</p>';
+                        } ?>
+                        <?php if ($row2['Loopkat'] == 1) {
+                           echo'<p class="voorblad-text">Loopkat: Ja</p>';
+                        } else {
+                            echo'<p class="voorblad-text">Loopkat: Nee</p>';
+                        } ?>
+                        <p class="voorblad-text">Verstelbare Giek: <?php echo $row2['Verstelbare_giek']?></p>
+                        <p class="voorblad-text">Soort Stempels: <?php echo $row2['Soort_Stempels']?></p>
+                        <?php if ($row2['Tekortkomingen'] == 1) {
+                           echo'<p class="voorblad-text">Tekortkomingen: Ja</p>';
+                        } else {
+                            echo'<p class="voorblad-text">Tekortkomingen: Nee</p>';
+                        } ?>
+                        <p class="voorblad-text">Afmelden voor: <?php echo $row2['Afmelden_Voor']?></p>
+                        <p class="voorblad-text">Toelichting: <?php echo $row2['Toelichting']?></p>
+                        <p class="voorblad-text">Werkinstructie: <?php echo $row2['Werkinstructie']?></p>
+                        <p class="voorblad-text">Kabelleverancier: <?php echo $row2['Kabelleverancier']?></p>
+                        <p class="voorblad-text">Waarnemingen: <?php echo $row2['Waarnemingen']?></p>
+                        <p class="voorblad-text">Handtekening: <?php echo $row2['Handtekening']?></p>
+                        <p class="voorblad-text">Aantal Bedrijfsuren: <?php echo $row2['Aantal_Bedrijfsuren']?></p>
+                        <p class="voorblad-text">Afleg Redenen: <?php echo $row2['Afleg_Redenen']?></p>
+                        <hr>
+                        <h1 class="title-text text-left">kabelchecklist</h1>
+                        <hr>
+                        <p class="voorblad-text">KabelID: <?php echo $row2['KabelID']?></p>
+                        <p class="voorblad-text">Draadbreuk 6D: <?php echo $row2['Draadbreuk_6D']?></p>
+                        <p class="voorblad-text">Draadbreuk 30D: <?php echo $row2['Draadbreuk_30D']?></p>
+                        <p class="voorblad-text">Beschadiging Buitenzijde: <?php echo $row2['Beschadiging_Buitenzijde']?></p>
+                        <p class="voorblad-text">Beschadiging Roest Corrosie: <?php echo $row2['Beschadiging_Roest_Corrosie']?></p>
+                        <p class="voorblad-text">Verminderde Kabeldiameter: <?php echo $row2['Verminderde_Kabeldiameter']?></p>
+                        <p class="voorblad-text">Positie Meetpunten: <?php echo $row2['Positie_Meetpunten']?></p>
+                        <p class="voorblad-text">Beschadiging Totaal: <?php echo $row2['Beschadiging_Totaal']?></p>
+                        <p class="voorblad-text">Type Beschadiging Roest: <?php echo $row2['Type_Beschadiging_Roest']?></p>
+                    <?php }
             } ?>
         </div>
+         <?php   } ?>
+        </div>
+
 
     <?php }
     else {

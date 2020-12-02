@@ -53,15 +53,15 @@
                 <br>
                 <input class="login-form" type="number" name="gieklengte" placeholder="Gieklengte">
                 <br>
-                <input class="login-form" type="number" name="topbaar" placeholder="Topbaar">
+                <p class="page-text">Topbaar: </p> <input type="checkbox" name="topbaar">
                 <br>
-                <input class="login-form" type="number" name="loopkat" placeholder="Loopkat">
+                <p class="page-text">Loopkat: </p> <input type="checkbox" name="loopkat">
                 <br>
                 <input class="login-form" type="number" name="verstelbaregiek" placeholder="Verstelbare giek">
                 <br>
                 <input class="login-form" type="number" name="soortstempels" placeholder="Soort Stempels">
                 <br>
-                <input class="login-form" type="number" name="tekortkomingen" placeholder="Tekortkomingen">
+                <p class="page-text">Tekortkomingen: </p> <input type="checkbox" name="tekortkomingen">
                 <br>
                 <p class="page-text">Afmelden voor: </p>
                 <input type="datetime-local" name="afmelddatum">

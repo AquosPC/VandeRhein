@@ -30,7 +30,7 @@
         
         </div> <?php
 
-            $sql = "SELECT * FROM voorbladen;";
+            $sql = "SELECT * FROM voorbladen";
             $result = mysqli_query($conn, $sql);
             $resultcheck = mysqli_num_rows($result); ?>
             <div class="center div-page">

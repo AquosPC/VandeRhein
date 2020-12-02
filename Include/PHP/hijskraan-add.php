@@ -18,13 +18,7 @@ if (isset($_POST['hijskraanadd-submit'])) {
     $toelaatbarebedrijflast = $_POST['toelaatbarebedrijflast'];
     $lmbinwerking = $_POST['lmbinwerking'];
     $proeflast = $_POST['proeflast'];
-
-    if ($_POST['akkoord'] = on) {
-        $akkoord = True;
-    }
-    else {
-        $akkoord = False;
-    }
+    $akkoord = isset($_POST['akkoord']);
 
     $sql = "INSERT INTO hijstesten (Opdrachtnummer, Volgnummer, Datum_Opgesteld, Hoofdgiek_Lengte, Mech_Sectie_Gieklengte, Hulpgiek_Lengte, Hoofdgiek_Giekhoek, Hulpgiek_Giekhoek, Hijskabel_Aantal_Parten, Zwenkhoek, Eigen_Massa_Ballast, Toelaatbare_Bedrijflast, LMB_In_Werking, Proeflast, Akkoord)
      VALUES ($opdrachtnummer, $volgnummer, $datum, $hoofdgieklengte, $mechsectiegieklengte, $hulpgieklengte, $hoofdgiekgiekhoek, $hulpgiekgiekhoek, $hijskabelaantalparten, $zwenkhoek, $eigenmassaballast, $toelaatbarebedrijflast, $lmbinwerking, $proeflast, $akkoord)";

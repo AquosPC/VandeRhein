@@ -17,11 +17,11 @@ if (isset($_POST['voorblad-add-submit'])) {
     $hulpgiekmeters = $_POST['hulpgiekmeters'];
     $flyjibdelen = $_POST['flyjibdelen'];
     $giekdelen = $_POST['gieklengte'];
-    $topbaar = $_POST['topbaar'];
-    $loopkat = $_POST['loopkat'];
+    $topbaar = isset($_POST['topbaar']);
+    $loopkat = isset($_POST['loopkat']);
     $verstelbaregiek = $_POST['verstelbaregiek'];
     $soortstempels = $_POST['soortstempels'];
-    $tekortkomingen = $_POST['tekortkomingen'];
+    $tekortkomingen = isset($_POST['tekortkomingen']);
     $afmelddatum = strtotime($_POST['afmelddatum']);
     $afmelddatum = date('YmdHis', $afmelddatum);
     $toelichting = $_POST['toelichting'];

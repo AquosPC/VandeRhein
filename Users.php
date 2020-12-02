@@ -42,7 +42,7 @@
                         <td><?php echo $row['id'] ?></td>
                         <td><?php echo $row['username'] ?></td>
                         <td><?php echo $row['email'] ?></td>
-                        <td><?php if ($row['accountrank'] = 1) {
+                        <td><?php if ($row['accountrank'] == 1) {
                             echo('Ja');
                         } else {
                             echo('Nee');
