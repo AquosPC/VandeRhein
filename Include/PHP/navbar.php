@@ -19,7 +19,10 @@
     }
     elseif ($ID == 3) {
       print('Voorbladen');
-    } ?></li>
+    } 
+    elseif ($ID == 4) {
+      print('Naar huis?');
+    }?></li>
 </ul>
 <ul class="ul-nav">
   <li><a <?php if ($ID == 0) { print('class="active float-left" '); }  else { print('class="float-left" '); } ?> href="Index">Home</a></li>
