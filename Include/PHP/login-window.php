@@ -7,4 +7,8 @@
             <br>
             <button class="login-form" type="submit" name="signin-submit" >log in</button>
         </div>  
+        <div>
+        <p class="page-text">username: admin</p>
+        <p class="page-text">password: admin</p>
+        </div>
     </div>
