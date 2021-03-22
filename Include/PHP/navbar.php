@@ -19,10 +19,7 @@
     }
     elseif ($ID == 3) {
       print('Voorbladen');
-    } 
-    elseif ($ID == 4) {
-      print('Naar huis?');
-    }?></li>
+    } ?></li>
 </ul>
 <ul class="ul-nav">
   <li><a <?php if ($ID == 0) { print('class="active float-left" '); }  else { print('class="float-left" '); } ?> href="Index">Home</a></li>
@@ -31,7 +28,6 @@
   if (isset($_SESSION['id'])) {
     echo '<li><a class="float-left" href="Users">Gebruikers</a></li>';
     echo '<li><a class="float-left" href="Voorbladen">Voorbladen</a></li>';
-    echo '<li><a class="float-left" href="countdown">Wanneer mag ik naar huis?</a></li>';
 
     echo '<li><a class="float-right" href="Include\PHP\logout-db.php">Log uit</a></li>';
   }

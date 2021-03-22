@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 5.0.3
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 15, 2020 at 05:07 PM
--- Server version: 10.4.11-MariaDB
--- PHP Version: 7.4.3
+-- Generation Time: Jan 14, 2021 at 01:31 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.11
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -46,6 +45,13 @@ CREATE TABLE `hijstesten` (
   `Akkoord` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `hijstesten`
+--
+
+INSERT INTO `hijstesten` (`Opdrachtnummer`, `Volgnummer`, `Datum_Opgesteld`, `Hoofdgiek_Lengte`, `Mech_Sectie_Gieklengte`, `Hulpgiek_Lengte`, `Hoofdgiek_Giekhoek`, `Hulpgiek_Giekhoek`, `Hijskabel_Aantal_Parten`, `Zwenkhoek`, `Eigen_Massa_Ballast`, `Toelaatbare_Bedrijflast`, `LMB_In_Werking`, `Proeflast`, `Akkoord`) VALUES
+(1, 1, '2020-12-01 00:25:00', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1);
+
 -- --------------------------------------------------------
 
 --
@@ -64,6 +70,13 @@ CREATE TABLE `kabelchecklisten` (
   `Beschadiging_Totaal` int(11) NOT NULL,
   `Type_Beschadiging_Roest` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `kabelchecklisten`
+--
+
+INSERT INTO `kabelchecklisten` (`Opdrachtnummer`, `KabelID`, `Draadbreuk_6D`, `Draadbreuk_30D`, `Beschadiging_Buitenzijde`, `Beschadiging_Roest_Corrosie`, `Verminderde_Kabeldiameter`, `Positie_Meetpunten`, `Beschadiging_Totaal`, `Type_Beschadiging_Roest`) VALUES
+(2, 2, 2, 2, 2, 2, 2, 2, 2, 2);
 
 -- --------------------------------------------------------
 
@@ -87,10 +100,16 @@ CREATE TABLE `users` (
   `id` int(11) NOT NULL,
   `email` varchar(25) NOT NULL,
   `password` text NOT NULL,
-  `firstname` varchar(25) NOT NULL,
-  `lastname` varchar(25) NOT NULL,
-  `accountrank` int(11) NOT NULL
+  `username` varchar(25) NOT NULL,
+  `accountrank` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`, `username`, `accountrank`) VALUES
+(10, 'admin', '$2y$10$dkFoziTe7vjrX/ZCYMPTRu7hgDkcRAV.PZkP0DyucOF9odRKWU/vK', 'admin', 1);
 
 -- --------------------------------------------------------
 
@@ -126,6 +145,14 @@ CREATE TABLE `voorbladen` (
   `Aantal_Bedrijfsuren` int(11) NOT NULL,
   `Afleg_Redenen` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `voorbladen`
+--
+
+INSERT INTO `voorbladen` (`Opdrachtnummer`, `TCTV_nummer`, `Keuringdatum`, `Uitvoerder`, `Deskundige`, `Opstelling_Kraan`, `Uitvoering_Toren_Haakhoogte`, `Soort_Giek`, `Telescoopgiek_Delen`, `Opbouwgiek_Meters`, `Hulpgiek_Meters`, `Fly_jib_Delen`, `Gieklengte`, `Topbaar`, `Loopkat`, `Verstelbare_giek`, `Soort_Stempels`, `Tekortkomingen`, `Afmelden_Voor`, `Toelichting`, `Werkinstructie`, `Kabelleverancier`, `Waarnemingen`, `Handtekening`, `Aantal_Bedrijfsuren`, `Afleg_Redenen`) VALUES
+(1, 1, '2020-12-01 00:24:00', '1', '1', '1', 1, '1', 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, '2020-12-01 00:26:00', '1', '1', '1', '1', '1', 1, '1'),
+(2, 2, '2020-12-01 12:41:00', '2', '2', '2', 2, '2', 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, '2020-12-24 12:41:00', '2', '2', '2', '2', '2', 2, '2');
 
 --
 -- Indexes for dumped tables
@@ -169,13 +196,13 @@ ALTER TABLE `voorbladen`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `voorbladen`
 --
 ALTER TABLE `voorbladen`
-  MODIFY `Opdrachtnummer` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `Opdrachtnummer` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
